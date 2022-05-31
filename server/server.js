@@ -20,12 +20,11 @@ app.get("/weather-data", (req, res) => {
         `&exclude=minutely,alerts&units=metric&appid=${process.env.API_KEY}`
     )
     .then(({ data }) => {
-      console.dir(data);
       const { current, hourly, daily } = data;
       res.json({
-        current: mapCurrentData({ current }),
-        daily: mapDailyData({ daily }),
-        hourly: mapHourlyData({ hourly }),
+        current: mapCurrentData({ current, daily }),
+        daily: mapDailyData({ daily, currentDt: current.dt }),
+        hourly: mapHourlyData(hourly),
         data,
       });
     })
@@ -44,6 +43,36 @@ app.get("/", (req, res) => {
 });
 app.listen("3001");
 
-function mapCurrentData(current) {}
-function mapDailyData(daily) {}
-function mapHourlyData(hourly) {}
+function mapCurrentData({ current, daily }) {
+  return {
+    currentTemperature: current.temp,
+    weatherIcon: current.weather[0].icon,
+    weatherDescription: current.weather[0].description,
+    windSpeed: current.wind_speed,
+    highTemperature: daily[0].temp.max,
+    lowTemperature: daily[0].temp.min,
+    feelHighTemperature: Math.max(...Object.values(daily[0].feels_like)),
+    feelLowTemperature: Math.min(...Object.values(daily[0].feels_like)),
+    precip: daily[0].pop * 100,
+  };
+}
+function mapDailyData({ daily, currentDt }) {
+  return daily
+    .filter((d) => d.dt > currentDt)
+    .map((day) => ({
+      datetime: day.dt * 1000,
+      temperature: day.temp.day,
+      weatherIcon: day.weather[0].icon,
+    }));
+}
+function mapHourlyData(hourly) {
+  console.dir(hourly);
+  return hourly.map((h) => ({
+    datetime: h.dt * 1000,
+    temperature: h.temp,
+    weatherIcon: h.weather[0].icon,
+    feelTemperature: h.feels_like,
+    windSpeed: h.wind_speed,
+    precip: h.pop * 100,
+  }));
+}
