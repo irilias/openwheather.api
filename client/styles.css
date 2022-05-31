@@ -1,0 +1,122 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+:root{
+    --primary-color: #EB6E4B;
+    --secondary-color: #66483F;
+    --font: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    --background-color: #97c2de
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    font-family: var(--font);
+}
+.blurred {
+    filter: blur(.25rem);
+}
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+}
+.header-left::after {
+    content: "";
+    background-color: var(--primary-color);
+    width: 5px;
+    margin-left: 1rem;
+}
+.header-left-details {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    justify-content: center;
+}
+
+.header-current-temp {
+    font-size: 5rem;
+}
+.header-current-description{
+    font-size: xx-large;
+}
+.header-right {
+    display: inline-grid;
+    grid-template-columns: repeat(3,30fr);
+    width: 30vw;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+}
+.daily-info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+.info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.info-group .label, .info-row-label {
+    font-size: 1.75rem;
+    font-weight: bolder;
+}
+
+.info-group > div:not(.label), .info-row-value {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+.daily-weather {
+    display: grid;
+    grid-template-columns: repeat(3,15vw);
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.daily-info-group {
+    border: 2px solid var(--primary-color);
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+}
+
+tr {
+  display: flex;
+  flex-direction: row;
+}
+
+td {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+ tbody:first-child {
+    border-top: 1px dashed #66483F;
+ }
+tr, td {
+    border-bottom: 1px dashed #66483F;
+}

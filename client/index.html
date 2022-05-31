@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consuming OpenWeatherAPI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="blurred">
+    <header>
+        <div class="header-left">
+            <img src="http://openweathermap.org/img/wn/10d@4x.png" alt="Current Weather Icon" class="weather-icon large">
+            <div class="header-left-details">
+                <div class="header-current-temp">21&deg;</div>
+                <div class="header-current-description">Sunny</div>
+            </div>
+
+        </div>
+        <div class="header-right">
+            <div class="info-group">
+                <div class="label">HIGH</div>
+                <div>23&deg;</div>
+            </div>
+            <div class="info-group">
+                <div class="label">FL HIGH</div>
+                <div>26&deg;</div>
+            </div>
+            <div class="info-group">
+                <div class="label">WIND</div>
+                <div>12mph</div>
+            </div>
+            <div class="info-group">
+                <div class="label">LOW</div>
+                <div>12&deg;</div>
+            </div>
+            <div class="info-group">
+                <div class="label">FL LOW</div>
+                <div>13&deg;</div>
+            </div>
+            <div class="info-group">
+                <div class="label">PRECIP</div>
+                <div>14%</div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <div class="daily-weather">
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Monday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Tuesday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Wednesday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Thursday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Friday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Saturday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+            <div class="daily-info-group">
+                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Daily Weather Icon" class="weather-icon small">
+                <div class="info-group">
+                    <div class="label">Sunday</div>
+                    <div>23&deg;</div>
+                </div>
+            </div>
+        </div>
+        <div class="hourly-weather">
+            <table>
+                <tbody>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">6AM</div>
+                        </td>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">7AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">8AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">9AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">10AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">11AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">12PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">1PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">2PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">3PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">4PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">5PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">6PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">7PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">8PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">9PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">10PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">11PM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+                    <tr class="info-row">
+                        <td>
+                            <div class="info-row-label">SUNDAY</div>
+                            <div class="info-row-value">12AM</div>
+                        </td>
+                        <td><img src="http://openweathermap.org/img/wn/10d@2x.png" alt="Hourly Weather Icon" class="weather-icon small"></td>
+                        <td>
+                            <div class="info-row-label">TEMP</div>
+                            <div class="info-row-value">22&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">FL TEMP</div>
+                            <div class="info-row-value">24&deg;</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">WIND</div>
+                            <div class="info-row-value">12mph</div>
+                        </td>
+                        <td>
+                            <div class="info-row-label">PRECIP</div>
+                            <div class="info-row-value">10%</div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </main>
+</body>
+
+</html>
